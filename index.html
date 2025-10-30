@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore MCD e mcm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Calcolatore MCD e mcm</h1>
+        <p class="subtitle">Massimo Comun Divisore e minimo comune multiplo</p>
+
+        <div class="input-grid">
+            <div class="input-group">
+                <label for="num1">Numero 1</label>
+                <input type="number" id="num1" placeholder="Inserisci" min="1" step="1" required>
+            </div>
+
+            <div class="input-group">
+                <label for="num2">Numero 2</label>
+                <input type="number" id="num2" placeholder="Inserisci" min="1" step="1" required>
+            </div>
+
+            <div class="input-group">
+                <label for="num3">Numero 3</label>
+                <input type="number" id="num3" placeholder="Inserisci" min="1" step="1" required>
+            </div>
+
+            <div class="input-group">
+                <label for="num4">Numero 4</label>
+                <input type="number" id="num4" placeholder="Inserisci" min="1" step="1" required>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-calculate" onclick="calculate()">Calcola</button>
+            <button class="btn-clear" onclick="clearAll()">Pulisci</button>
+        </div>
+
+        <div class="error" id="error"></div>
+
+        <div class="results" id="results">
+            <div class="result-item">
+                <div class="result-label">Massimo Comun Divisore (MCD)</div>
+                <div class="result-value" id="mcd">-</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">minimo comune multiplo (mcm)</div>
+                <div class="result-value" id="mcm">-</div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 Suggerimento:</strong> Il MCD è il più grande numero che divide tutti i numeri, mentre il mcm è il più piccolo numero divisibile per tutti.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
