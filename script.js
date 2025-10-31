@@ -61,29 +61,31 @@ function calculate() {
     for (let input of inputs) {
         const value = input.value.trim();
         
-        if (!value) {
-            mostraErrore('⚠️ Inserisci tutti e 4 i numeri');
-            return;
+        if (value) {
+            const num = parseInt(value);
+            
+            if (isNaN(num)) {
+                mostraErrore('⚠️ Inserisci solo numeri validi');
+                return;
+            }
+            
+            if (num <= 0) {
+                mostraErrore('⚠️ I numeri devono essere maggiori di zero');
+                return;
+            }
+            
+            if (!Number.isInteger(num)) {
+                mostraErrore('⚠️ Inserisci solo numeri interi');
+                return;
+            }
+            
+            numeri.push(num);
         }
-        
-        const num = parseInt(value);
-        
-        if (isNaN(num)) {
-            mostraErrore('⚠️ Inserisci solo numeri validi');
-            return;
-        }
-        
-        if (num <= 0) {
-            mostraErrore('⚠️ I numeri devono essere maggiori di zero');
-            return;
-        }
-        
-        if (!Number.isInteger(num)) {
-            mostraErrore('⚠️ Inserisci solo numeri interi');
-            return;
-        }
-        
-        numeri.push(num);
+    }
+
+    if (numeri.length < 2) {
+        mostraErrore('⚠️ Inserisci almeno 2 numeri');
+        return;
     }
 
     const mcd = calcolaMCDMultipli(numeri);
